@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>SkillBus</title>
+	<link rel="stylesheet" href="css/reset.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<script defer type="module" src="./js/inputmask.min.js"></script>
+	<script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
+	<script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
+	<script defer type="module" src="./js/app.js"></script>
+</head>
+
+<body>
+	<header class="header">
+		<div class="header__container">
+			<img src="img/logo.svg" alt="Logo SkillBus" class="header__logo">
+			<div class="search__container" id="search__container">
+				<label for="search">
+					<input type="text" name="search" id="search" placeholder="Введите запрос">
+				</label>
+				<ul class="search__list" id="search__list">
+
+				</ul>
+			</div>
+
+
+		</div>
+	</header>
+	<main>
+		<section class="client">
+			<div class="client__content">
+				<h1 class="client__title">Клиенты</h1>
+				<div id="app">
+					<div class="loader__container">
+						<div class="loader">
+							<div class="inner one"></div>
+							<div class="inner two"></div>
+							<div class="inner three"></div>
+						</div>
+					</div>
+				</div>
+				<button class="new__client-btn btn" data-path="new-cli">Добавить клиента</button>
+			</div>
+		</section>
+		<section>
+			<div class="modals">
+				<div class="modal-overlay">
+					<div class="modal modal__del" data-target="dlt-cli">
+						<button class="modal__close">
+							<span class="modal__close-line"></span>
+							<span class="modal__close-line"></span>
+						</button>
+						<h2>Удалить клиента</h2>
+						<p>Вы действительно хотите удалить<br>данного клиента?</p>
+						<button class="dlt-btn-modal">Удалить</button>
+						<button class="cancel-btn">Отмена</button>
+					</div>
+					<div class="modal modal__new" data-target="new-cli">
+						<button class="modal__close">
+							<span class="modal__close-line"></span>
+							<span class="modal__close-line"></span>
+						</button>
+						<h2>Новый клиент</h2>
+						<form action="#" id="new__form">
+							<div class="input__fio">
+								<div class="input__container">
+									<p class="name__error">Обязательно для заполнения</p>
+									<input class="inp__from" type="text" name="surname" id="surname" required>
+									<label class="input__placeholder" for="surname">Фамилия</label>
+								</div>
+								<div class="input__container">
+									<p class="name__error">Обязательно для заполнения</p>
+									<input class="inp__from" type="text" name="name" id="name" required>
+									<label class="input__placeholder" for="name">Имя</label>
+								</div>
+								<div class="input__container">
+									<input class="inp__from" type="text" name="midname" id="midname" required>
+									<label class="input__placeholder-mid" for="midname">Отчество</label>
+								</div>
+							</div>
+							<div class="contacts">
+								<div class="contact__list" id="contact__list"></div>
+								<button id="new__btn-contact">Добавить контакт</button>
+							</div>
+							<div class="contacts__error">Добавьте хотя бы один контакт</div>
+							<div class="contacts__error-value">Не заполнен один или несколько контактов</div>
+							<button type="submit" id="new__btn-save">Сохранить</button>
+							<button type="submit" id="new__btn-cancel">Отмена</button>
+						</form>
+					</div>
+					<div class="modal modal__change" data-target="chg-cli">
+						<button class="modal__close">
+							<span class="modal__close-line"></span>
+							<span class="modal__close-line"></span>
+						</button>
+						<div class="title__id">
+							<h2>Изменить данные</h2>
+							<span></span>
+						</div>
+
+						<form action="#" id="change__form">
+							<div class="input__fio">
+								<div class="input__container">
+									<input class="inp__from" type="text" name="surname" id="surname-chg" required>
+									<label class="input__placeholder" for="surname">Фамилия</label>
+								</div>
+								<div class="input__container">
+									<input class="inp__from" type="text" name="name" id="name-chg" required>
+									<label class="input__placeholder" for="name">Имя</label>
+								</div>
+								<div class="input__container">
+									<input class="inp__from" type="text" name="midname" id="midname-chg">
+									<label class="input__placeholder-mid" for="midname">Отчество</label>
+								</div>
+							</div>
+							<div class="contacts">
+								<div class="contact__list" id="contact__list-chg"></div>
+								<button id="change__btn-contact">Добавить контакт</button>
+							</div>
+							<button type="submit" id="change__btn-save">Сохранить</button>
+							<button type="submit" class="dlt-btn-modal" id="dlt-btn-modal">Удалить клиента</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+</body>
+
+
+</html>
